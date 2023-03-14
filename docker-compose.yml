@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: developer
+      MYSQL_USER: developer
+      MYSQL_PASSWORD: developer
+      MYSQL_ROOT_PASSWORD: developer
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - mydb-db:/var/lib/mysql
+
+volumes:
+  mydb-db:
